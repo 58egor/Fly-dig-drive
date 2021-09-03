@@ -8,13 +8,17 @@ public class Control : MonoBehaviour
     public GameObject[] objects;
     public float speed = 20f;
     float rotSpeed;
+    public float maxDegree = 70;
     public float rotationSpeed = 10f;
     bool car = true;
     bool jet = false;
     bool drel = false;
+    bool firstTime = false;
     Vector2 startPos;
     Vector2 direction;
     bool directionChosen;
+    float stun = 0.5f;
+    float stunActive=0;
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other)
     {
@@ -24,19 +28,33 @@ public class Control : MonoBehaviour
             {
                 jet = false;
                 car = true;
+                drel = false;
                 Debug.Log("collision changed");
+                stunActive = stun;
+                if (direction.y > 0.1f)
+                {
+                    transform.rotation = Quaternion.Euler(0, 0, 0);
+                }
             }
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("collision");
-        if (other.gameObject.layer == 10) {
-            if (drel)
+
+        Debug.Log("Stay2");
+        if (other.gameObject.layer == 10)
+        {
+            if (drel && transform.position.y>0.1f)
             {
                 Debug.Log("collision changed2");
                 drel = false;
                 car = true;
+                jet = false;
+                stunActive = stun;
+                if(direction.y < -0.1f)
+                {
+                    transform.rotation = Quaternion.Euler(0, 0, 0);
+                }
             }
         }
     }
@@ -55,12 +73,15 @@ public class Control : MonoBehaviour
                 // Record initial touch position.
                 case TouchPhase.Began:
                     startPos = touch.position;
-                    directionChosen = false;
+                    // directionChosen = false;
                     break;
 
                 // Determine direction by comparing the current touch position with the initial one.
                 case TouchPhase.Moved:
                     direction = touch.position - startPos;
+                    directionChosen = false;
+                    Debug.Log("direction:" + direction);
+                    //startPos = touch.position;
                     break;
 
                 // Report that a direction has been chosen when the finger is lifted.
@@ -79,7 +100,7 @@ public class Control : MonoBehaviour
                     break;
             }
         }
-        if (direction.y < 0 && !directionChosen)//если палец свайпнули вниз
+        if (direction.y < -0.1f && !directionChosen)//если палец свайпнули вниз
         {
             Debug.Log("свайп вниз");
             if (car)//и в это время были машиной
@@ -90,7 +111,7 @@ public class Control : MonoBehaviour
             }
             rotSpeed = -rotationSpeed;
         }
-        if(direction.y > 0 && !directionChosen)
+        if(direction.y > 0.1f && !directionChosen)
         {
             Debug.Log("свайп вверх");
             if (car)//и в это время были машиной
@@ -126,32 +147,37 @@ public class Control : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Vector3 newpos = transform.right * speed * Time.fixedDeltaTime;
-        rigidbody.MovePosition(transform.position+newpos);
+        Debug.Log("Rot:" + rotSpeed);
         float newRot = transform.rotation.eulerAngles.z + rotSpeed * Time.fixedDeltaTime;
         Debug.Log(newRot);
-        if (newRot > 270)
+        if (newRot >= 360 - maxDegree-10)
         {
             newRot -= 360;
-            Debug.Log(newRot);
+            Debug.Log("new:"+newRot);
         }
-        if (newRot >= 80)
+        Debug.Log("new2:" + newRot);
+        if (newRot >= maxDegree)
         {
             Debug.Log("Предел:" + newRot);
-            newRot = 80;
+            newRot = maxDegree;
         }
-        if (newRot <= -80)
+        if (newRot <= -maxDegree)
         {
-            newRot = -80;
+            Debug.Log("Предел2");
+            newRot = -maxDegree;
         }
         if (!car)
         {
+            Debug.Log("rotation:" + newRot);
             transform.rotation = Quaternion.Euler(0, 0, newRot);
         }
         else
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
+
         }
-        
+        Vector3 newpos = transform.right * speed * Time.fixedDeltaTime;
+        rigidbody.MovePosition(transform.position + newpos);
+
     }
 }
