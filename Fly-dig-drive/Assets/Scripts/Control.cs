@@ -5,6 +5,8 @@ using UnityEngine;
 public class Control : MonoBehaviour
 {
     Rigidbody rigidbody;
+    public GameObject loose;
+    public TrailRenderer[] dirts;
     public GameObject[] objects;
     public float speed = 20f;
     float rotSpeed;
@@ -178,6 +180,42 @@ public class Control : MonoBehaviour
         }
         Vector3 newpos = transform.right * speed * Time.fixedDeltaTime;
         rigidbody.MovePosition(transform.position + newpos);
-
+        if (transform.position.y < -2.5f)
+        {
+            jet = false;
+            car = false;
+            drel = true;
+        }
+        if (transform.position.y > 2.5f)
+        {
+            jet = true;
+            car = false;
+            drel = false;
+        }
+        if (transform.position.y < -1f)
+        {
+            if (!dirts[0].enabled)
+            {
+                for (int i = 0; i < dirts.Length; i++)
+                {
+                    dirts[i].enabled = true;
+                }
+            }
+        }
+        else
+        {
+            if (dirts[0].enabled)
+            {
+                for (int i = 0; i < dirts.Length; i++)
+                {
+                    dirts[i].enabled = false;
+                }
+            }
+        }
+    }
+    public void set()
+    {
+        Debug.Log("Setttttt");
+        loose.SetActive(true);
     }
 }

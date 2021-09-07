@@ -14,7 +14,7 @@ public class GunScript : MonoBehaviour
     void Start()
     {
         transform.position = player.transform.position;
-        layerMask = 1 << 12;
+        layerMask = 1 << 11;
         Debug.Log("Name:" + layerMask);
         //layerMask = ~layerMask;
     }
@@ -22,19 +22,22 @@ public class GunScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = player.transform.position;
-        RaycastHit hit;
-        Ray ray = new Ray(transform.position, transform.right);
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity,layerMask) && count<=0)
+        if (player != null)
         {
-            Debug.Log("Name:" + hit.collider.name);
-            Debug.Log("Pos:" + hit.point);
-            Instantiate(bullet, transform.position, Quaternion.identity);
-            count = gunCount;
-        }
-        else
-        {
-            count -= Time.deltaTime;
+            transform.position = player.transform.position;
+            RaycastHit hit;
+            Ray ray = new Ray(transform.position, transform.right);
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask) && count <= 0)
+            {
+                Debug.Log("Name:" + hit.collider.name);
+                Debug.Log("Pos:" + hit.point);
+                Instantiate(bullet, transform.position, Quaternion.identity);
+                count = gunCount;
+            }
+            else
+            {
+                count -= Time.deltaTime;
+            }
         }
     }
 }

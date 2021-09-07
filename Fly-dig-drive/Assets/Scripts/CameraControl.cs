@@ -7,6 +7,9 @@ public class CameraControl : MonoBehaviour
     Camera cam;
     public GameObject player;
     public float x;
+    public float minY;
+    public float maxY;
+    bool pause=false;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +19,11 @@ public class CameraControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        cam.transform.position = new Vector3(player.transform.position.x+x, player.transform.position.y, cam.transform.position.z);
+        if(player!=null && !pause)
+        cam.transform.position = new Vector3(player.transform.position.x+x, Mathf.Clamp(player.transform.position.y,minY,maxY), cam.transform.position.z);
+    }
+    public void stop()
+    {
+        pause = true;
     }
 }

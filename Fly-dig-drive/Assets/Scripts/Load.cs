@@ -4,13 +4,15 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Load : MonoBehaviour
 {
+    public GameObject ui;
     public int sceneNumber = 0;
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other)
     {
         if (other.name == "Player")
         {
-            SceneManager.LoadScene(sceneNumber);
+            ui.SetActive(true);
+            Camera.main.GetComponent<CameraControl>().stop();
         }
     }
 }

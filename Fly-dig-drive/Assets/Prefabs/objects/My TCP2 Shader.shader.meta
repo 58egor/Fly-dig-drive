@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: 261c90b327185b0498d924281f3cab63
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures:
+  - _NoTileNoiseTex: {fileID: 2800000, guid: af5515bfe14f1af4a9b8b3bf306b9261, type: 3}
+  - _Ramp: {fileID: 2800000, guid: ccad9b0732473ee4e95de81e50e9050f, type: 3}
+  nonModifiableTextures: []
+  userData: USER,FPBS_SPECULAR,FSMOOTHNESS_ALBEDO_ALPHA,FTEXTHR_MAIN,FSKETCH,FSKETCH_ANIM,FNO_SHADOW,fnoshadow,KSHADER_TARGET:3.0,chE9B39021,cSM:30,cCT:pbs,cCF:TCP2_ShaderTemplate_SurfacePBS
+  assetBundleName: 
+  assetBundleVariant: 

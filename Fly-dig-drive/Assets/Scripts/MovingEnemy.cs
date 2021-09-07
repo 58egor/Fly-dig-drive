@@ -9,6 +9,7 @@ public class MovingEnemy : MonoBehaviour
     public float distance = 30;
     public GameObject player;
     public GameObject[] objects;
+    public TrailRenderer[] dirts;
     int point = 1;
 
     // Start is called before the first frame update
@@ -21,14 +22,17 @@ public class MovingEnemy : MonoBehaviour
     private void Update()
     {
         float sp=speed;
-        float dist = Vector3.Distance(transform.position, player.transform.position);
-        if (dist > distance)
+        if (player != null)
         {
-            sp -= dist;
-        }
-        else
-        {
-            sp += dist;
+            float dist = Vector3.Distance(transform.position, player.transform.position);
+            if (dist > distance)
+            {
+                sp -= dist;
+            }
+            else
+            {
+                sp += dist;
+            }
         }
         Debug.Log("speed:"+sp);
         if (point < bezier.bezierPath.Length)
@@ -44,7 +48,7 @@ public class MovingEnemy : MonoBehaviour
                 transform.LookAt(bezier.bezierPath[point]);
             }
         }
-        Debug.Log("Distance:" + Vector3.Distance(transform.position, player.transform.position));
+       
         if (transform.position.y > 0.1f)
         {
             objects[0].SetActive(true);
@@ -62,6 +66,26 @@ public class MovingEnemy : MonoBehaviour
             objects[0].SetActive(false);
             objects[1].SetActive(true);
             objects[2].SetActive(false);
+        }
+        if (transform.position.y < -1f)
+        {
+            if (!dirts[0].enabled)
+            {
+                for (int i = 0; i < dirts.Length; i++)
+                {
+                    dirts[i].enabled = true;
+                }
+            }
+        }
+        else
+        {
+            if (dirts[0].enabled)
+            {
+                for (int i = 0; i < dirts.Length; i++)
+                {
+                    dirts[i].enabled = false;
+                }
+            }
         }
     }
 

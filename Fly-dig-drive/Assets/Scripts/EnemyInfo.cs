@@ -13,6 +13,7 @@ public class EnemyInfo : MonoBehaviour
     public float spawnCount = 0.5f;
     float spawn = 0;
     bool spawnActive = false;
+    public GameObject effcet;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,6 +51,7 @@ public class EnemyInfo : MonoBehaviour
         hp -= HP;
         if (hp <= 0)
         {
+            Instantiate(effcet, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
