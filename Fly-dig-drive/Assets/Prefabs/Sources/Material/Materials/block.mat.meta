@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Sources/Material/Materials/block.mat.meta
+guid: 8c52460d4f7ed9d4da1b35b32588ed67
+NativeFormatImporter:
+=======
+guid: a81ba01ecb037a74aa5a2d484cd7b683
+PrefabImporter:
+>>>>>>> d32b844f5662141381a18d2c64ad4bc7ed632f83:Assets/Prefabs/LevelConstructor/Blocks/RoadVerticalMovingObstaclesBlock.prefab.meta
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

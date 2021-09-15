@@ -11,6 +11,7 @@ public class ButtonScript : MonoBehaviour
     public Text text2;
     public GameObject canv;
     public bool win = false;
+    public bool start = false;
     int money;
     int newM;
     float count = 0.1f;
@@ -35,18 +36,20 @@ public class ButtonScript : MonoBehaviour
     }
     public void buttonStart()
     {
+        Camera.main.GetComponent<CameraControl>().SetFase1();
+        GameObject.Find("Player").GetComponent<Control>().SetStart();
         canv.SetActive(true);
         Time.timeScale = 1;
         gameObject.SetActive(false);
     }
     public void buttonRestart()
     {
-        SaveLoadOperations.SaveMoneys(money);
+       // SaveLoadOperations.SaveMoneys(money);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     public void buttonNextLevel()
     {
-        SaveLoadOperations.SaveMoneys(money);
+        //SaveLoadOperations.SaveMoneys(money);
         int i = SaveLoadOperations.SavedLevel();
         i++;
         if (i > 2)
@@ -58,25 +61,11 @@ public class ButtonScript : MonoBehaviour
     }
     private void Update()
     {
-        if (win)
+        if (start)
         {
-            if (money <newM && counM<=0)
+            if (Input.touchCount > 0)
             {
-                if(money>=newM)
-                {
-                    money = newM;
-                    text.text = money + "";
-                }
-                else
-                {
-                    money++;
-                    counM = count;
-                    text.text = money + "";
-                }
-            }
-            else
-            {
-                counM -= Time.deltaTime;
+                buttonStart();
             }
         }
     }

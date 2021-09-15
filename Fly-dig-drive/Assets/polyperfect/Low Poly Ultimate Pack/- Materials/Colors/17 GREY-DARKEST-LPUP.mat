@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 17 GREY-DARKEST-LPUP
-  m_Shader: {fileID: 4800000, guid: 6655c12c81aab7b4aa56867e0b10d49d, type: 3}
+  m_Shader: {fileID: 4800000, guid: 39863a74ba34d9a47a33d8789651486d, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -98,12 +98,17 @@ Material:
     - _Parallax: 0.02
     - _RampSmooth: 0.1
     - _RampSmoothAdd: 0.75
+    - _RampSmoothOtherLights: 0.5
     - _RampThreshold: 0.5
+    - _RampThresholdOtherLights: 0.5
     - _RimMax: 1
     - _RimMin: 0.5
     - _SSDistortion: 0.2
     - _SSPower: 3
     - _SSScale: 1
+    - _Shadow_HSV_H: 0
+    - _Shadow_HSV_S: 0
+    - _Shadow_HSV_V: 0
     - _SketchHalftoneMax: 1
     - _SketchHalftoneMin: 0.2
     - _SketchSpeed: 6

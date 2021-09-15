@@ -21,6 +21,7 @@ public class SliderScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(start!=null)
         if (slider.value < slider.maxValue && start!=null)
         {
             slider.value = slider.maxValue - Vector3.Distance(finish, start.transform.position);

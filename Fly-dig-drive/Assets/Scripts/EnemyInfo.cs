@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemyInfo : MonoBehaviour
 {
     public GameObject bomb;
+    public GameObject coin;
+    public GameObject traectory;
     public int hp = 100;
     public int spawnBomb = 5;
     int minus;
@@ -24,7 +26,7 @@ public class EnemyInfo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (spawnActive && spawn <= 0)
+        if (spawnActive && spawn <= 0 && hp>0)
         {
             Instantiate(bomb, transform.position, Quaternion.identity);
             bCount--;
@@ -49,10 +51,16 @@ public class EnemyInfo : MonoBehaviour
             minus = spawnBomb;
         }
         hp -= HP;
-        if (hp <= 0)
+        for(int i = 0; i < HP; i++)
         {
-            Instantiate(effcet, transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            GameObject obj= Instantiate(coin, transform.position, Quaternion.identity);
+            obj.GetComponent<Money>().isGet = true;
+            obj.GetComponent<Money>().count = 0.2f;
         }
+        //if (hp <= 0)
+        //{
+        //    Instantiate(effcet, transform.position, Quaternion.identity);
+        //    Destroy(gameObject);
+        //}
     }
 }

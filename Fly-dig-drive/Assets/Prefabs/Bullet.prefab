@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 5794799305913990163}
   - component: {fileID: 654254843566544832}
   - component: {fileID: -3942522227979651282}
-  - component: {fileID: 8181977986849491310}
   - component: {fileID: 7263772046699228689}
+  - component: {fileID: 2803998044093131464}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -113,21 +113,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8181977986849491310
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4405405612474828402}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a7e5b512f866224f9e5086bc0696342, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 1
-  speed: 50
-  effect: {fileID: 127072, guid: 7f45705f5f30d8a45af0fc2eb8c8998a, type: 3}
 --- !u!64 &7263772046699228689
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -142,6 +127,20 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: be315216e545ce045b7a75b41a5effba, type: 3}
+--- !u!114 &2803998044093131464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4405405612474828402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1365393709fa7634595770c5ddb12483, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 30
+  enemy: {fileID: 127072, guid: 7f45705f5f30d8a45af0fc2eb8c8998a, type: 3}
 --- !u!1001 &1170293277771745193
 PrefabInstance:
   m_ObjectHideFlags: 0

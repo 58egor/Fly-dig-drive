@@ -1,0 +1,253 @@
+fileFormatVersion: 2
+guid: 24fe702ae1a76534b88548396e8c6b2a
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: ammo
+    100002: body
+    100004: body 1
+    100006: body1_M
+    100008: //RootNode
+    100010: bot_soldier
+    100012: communication
+    100014: communication1_R
+    100016: ConstraintSystem
+    100018: end_R
+    100020: FKExtraRoot_M
+    100022: FKOffsetRoot_M
+    100024: FKRoot_M
+    100026: FKSystem
+    100028: FKXRoot_M
+    100030: foot
+    100032: foot 1
+    100034: foot 2
+    100036: foot 3
+    100038: foot1_L
+    100040: foot1_R
+    100042: foot2_L
+    100044: foot2_R
+    100046: Group
+    100048: gun
+    100050: gun1_M
+    100052: gun2
+    100054: gun3_M
+    100056: hinge
+    100058: hip
+    100060: hip 1
+    100062: hip 2
+    100064: hip 3
+    100066: hip1_L
+    100068: hip1_R
+    100070: hip2_L
+    100072: hip2_R
+    100074: hip_21_L
+    100076: hip_21_R
+    100078: hip_2_L
+    100080: hip_2_R
+    100082: leg
+    100084: leg 1
+    100086: leg 2
+    100088: leg 3
+    100090: leg_b_L
+    100092: leg_b_R
+    100094: leg_f_L
+    100096: leg_f_R
+    100098: leg_l_b
+    100100: leg_l_f
+    100102: leg_r_b
+    100104: leg_r_f
+    100106: Main
+    100108: midle_R
+    100110: MotionSystem
+    100112: Root_M
+    100114: second_gun1_R
+    100116: second_gun_R
+    100118: start_R
+    400000: ammo
+    400002: body
+    400004: body 1
+    400006: body1_M
+    400008: //RootNode
+    400010: bot_soldier
+    400012: communication
+    400014: communication1_R
+    400016: ConstraintSystem
+    400018: end_R
+    400020: FKExtraRoot_M
+    400022: FKOffsetRoot_M
+    400024: FKRoot_M
+    400026: FKSystem
+    400028: FKXRoot_M
+    400030: foot
+    400032: foot 1
+    400034: foot 2
+    400036: foot 3
+    400038: foot1_L
+    400040: foot1_R
+    400042: foot2_L
+    400044: foot2_R
+    400046: Group
+    400048: gun
+    400050: gun1_M
+    400052: gun2
+    400054: gun3_M
+    400056: hinge
+    400058: hip
+    400060: hip 1
+    400062: hip 2
+    400064: hip 3
+    400066: hip1_L
+    400068: hip1_R
+    400070: hip2_L
+    400072: hip2_R
+    400074: hip_21_L
+    400076: hip_21_R
+    400078: hip_2_L
+    400080: hip_2_R
+    400082: leg
+    400084: leg 1
+    400086: leg 2
+    400088: leg 3
+    400090: leg_b_L
+    400092: leg_b_R
+    400094: leg_f_L
+    400096: leg_f_R
+    400098: leg_l_b
+    400100: leg_l_f
+    400102: leg_r_b
+    400104: leg_r_f
+    400106: Main
+    400108: midle_R
+    400110: MotionSystem
+    400112: Root_M
+    400114: second_gun1_R
+    400116: second_gun_R
+    400118: start_R
+    2100000: mat_2
+    2100002: mat_1
+    2100004: lambert1
+    2100006: mat_3
+    4300000: hinge
+    4300002: ammo
+    4300004: communication
+    4300006: body
+    4300008: gun
+    4300010: gun2
+    4300012: leg
+    4300014: hip
+    4300016: foot
+    4300018: leg
+    4300020: hip
+    4300022: foot
+    4300024: leg
+    4300026: hip
+    4300028: foot
+    4300030: leg
+    4300032: hip
+    4300034: foot
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: ammo
+    13700002: body 1
+    13700004: communication
+    13700006: foot
+    13700008: foot 1
+    13700010: foot 2
+    13700012: foot 3
+    13700014: gun
+    13700016: gun2
+    13700018: hinge
+    13700020: hip
+    13700022: hip 1
+    13700024: hip 2
+    13700026: hip 3
+    13700028: leg
+    13700030: leg 1
+    13700032: leg 2
+    13700034: leg 3
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

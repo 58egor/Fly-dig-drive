@@ -11,6 +11,7 @@ public class TrainingAnimation : MonoBehaviour
     bool isActive = true;
     float speed = 80f;
     bool pos = true;
+    public bool xActive = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,28 +21,58 @@ public class TrainingAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (pos)
+        if (xActive)
         {
-            if (transform.position.y-arrow1.transform.position.y > 0.1f)
+            if (pos)
             {
-                Vector3 vec = new Vector3(transform.position.x, arrow1.transform.position.y, transform.position.z);
-                transform.position = Vector3.MoveTowards(transform.position, vec, speed * Time.deltaTime);
+                if (transform.position.y - arrow1.transform.position.y > 0.1f)
+                {
+                    Vector3 vec = new Vector3(transform.position.x, arrow1.transform.position.y, transform.position.z);
+                    transform.position = Vector3.MoveTowards(transform.position, vec, 1);
+                }
+                else
+                {
+                    pos = false;
+                }
             }
             else
             {
-                pos = false;
+                if (arrow2.transform.position.y - transform.position.y > 0.1f)
+                {
+                    Vector3 vec = new Vector3(transform.position.x, arrow2.transform.position.y, transform.position.z);
+                    transform.position = Vector3.MoveTowards(transform.position, vec, 1);
+                }
+                else
+                {
+                    pos = true;
+                }
             }
         }
         else
         {
-            if (arrow2.transform.position.y-transform.position.y > 0.1f)
+            if (pos)
             {
-                Vector3 vec = new Vector3(transform.position.x, arrow2.transform.position.y, transform.position.z);
-                transform.position = Vector3.MoveTowards(transform.position, vec, speed * Time.deltaTime);
+                if (transform.position.x- arrow1.transform.position.x > 0.1f)
+                {
+                    Vector3 vec = new Vector3(arrow1.transform.position.x,transform.position.y, transform.position.z);
+                    transform.position = Vector3.MoveTowards(transform.position, vec, speed * Time.deltaTime);
+                }
+                else
+                {
+                    pos = false;
+                }
             }
             else
             {
-                pos = true;
+                if (arrow2.transform.position.x- transform.position.x > 0.1f)
+                {
+                    Vector3 vec = new Vector3(arrow2.transform.position.x, transform.position.y, transform.position.z);
+                    transform.position = Vector3.MoveTowards(transform.position, vec, speed * Time.deltaTime);
+                }
+                else
+                {
+                    pos = true;
+                }
             }
         }
         if (Input.touchCount > 0)

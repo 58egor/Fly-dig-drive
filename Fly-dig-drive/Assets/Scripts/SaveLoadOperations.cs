@@ -16,11 +16,11 @@ public static class SaveLoadOperations
     public static void SaveCollectedMoneys(int moneys)
     {
         int m = moneys;
-        if (PlayerPrefs.HasKey("SavedCollectedMoney"))
+        if (PlayerPrefs.HasKey("SavedMoney"))
         {
-            m+=PlayerPrefs.GetInt("SavedCollectedMoney");
+            m+=PlayerPrefs.GetInt("SavedMoney");
         }
-        PlayerPrefs.SetInt("SavedCollectedMoney", m);
+        PlayerPrefs.SetInt("SavedMoney", m);
     }
     public static int SavedLevel()
     {
